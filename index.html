@@ -1,0 +1,553 @@
+<html class="scroll-smooth" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Childhood Friends: Memories Universe
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: #e0e7ff;
+      overflow-x: hidden;
+    }
+    /* Scrollbar for Memoryverse */
+    .memoryverse-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+    .memoryverse-scroll::-webkit-scrollbar-track {
+      background: #1e293b;
+    }
+    .memoryverse-scroll::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 4px;
+    }
+    /* Parallax layers */
+    .parallax-layer {
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease;
+    }
+    /* Cinematic card animations */
+    .card-flip {
+      perspective: 1000px;
+    }
+    .card-inner {
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+    .card-flip:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front,
+    .card-back {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      background: #1e293b;
+      color: #e0e7ff;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    /* Animated avatar expressions */
+    @keyframes blink {
+      0%, 20%, 40%, 60%, 80%, 100% {
+        opacity: 1;
+      }
+      10%, 30%, 50%, 70%, 90% {
+        opacity: 0;
+      }
+    }
+    .avatar-eyes {
+      animation: blink 6s infinite;
+    }
+  </style>
+ </head>
+ <body class="flex flex-col min-h-screen">
+  <!-- Header / Navigation -->
+  <header class="bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-900 shadow-lg sticky top-0 z-50">
+   <nav class="container mx-auto flex items-center justify-between py-4 px-6 md:px-12">
+    <div class="flex items-center space-x-3">
+     <img alt="Childhood Friends Memories Universe logo, stylized CF letters in a glowing purple-blue gradient" class="w-12 h-12 rounded-full" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6f132d82-8f8d-41a2-2d0a-4f40928e13d4.jpg" width="48"/>
+     <h1 class="text-2xl font-bold text-indigo-300 tracking-wide select-none">
+      Memories Universe
+     </h1>
+    </div>
+    <ul class="hidden md:flex space-x-8 text-indigo-200 font-semibold">
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#memoryverse">
+       Memoryverse
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#avatars">
+       Avatars &amp; Chatbots
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#memory-scapes">
+       MY BEST BATCH'S
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#cinematic-cards">
+       Cinematic Cards
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#group-activities">
+       Group Activities
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#personalization">
+       Personalization
+      </a>
+     </li>
+    </ul>
+    <button aria-label="Toggle menu" class="md:hidden text-indigo-300 hover:text-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-400" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </nav>
+   <div class="hidden md:hidden bg-indigo-900/90" id="mobile-menu">
+    <ul class="flex flex-col space-y-4 p-6 text-indigo-200 font-semibold">
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#memoryverse">
+       Memoryverse
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#avatars">
+       Avatars &amp; Chatbots
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#memory-scapes">
+      MY BEST BATCHES'S
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#cinematic-cards">
+       Cinematic Cards
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#group-activities">
+       Group Activities
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#personalization">
+       Personalization
+      </a>
+     </li>
+    </ul>
+   </div>
+  </header>
+  <main class="flex-grow container mx-auto px-6 md:px-12 py-10 space-y-20">
+   <!-- Hero Section -->
+   <section class="text-center max-w-4xl mx-auto space-y-6">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-indigo-300 leading-tight">
+     Childhood Friends:
+     <br/>
+     <span class="text-indigo-500">
+      Memories Universe
+     </span>
+    </h2>
+    <p class="text-indigo-200 text-lg md:text-xl max-w-3xl mx-auto">
+     Childhood friends are the roots of our happiest memories. No matter how far life takes us, their presence feels like home. They remind us of who we were before the world changed us.
+    </p>
+    <a class="inline-block mt-6 px-8 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow-lg transition" href="#memoryverse">
+    <div>
+      <pre><img src="https://media.tenor.com/ADReSgvR81QAAAAM/sisterhood-friendship.gif"></pre>
+    
+    </div>
+     
+    </a>
+   </section>
+    <marquee>ENTER THE FRIENDS WORLD</marquee>
+   <!-- Memoryverse Section -->
+   <section class="space-y-8" id="memoryverse">
+    <h3 class="text-3xl font-bold text-indigo-400 border-b-2 border-indigo-600 pb-2 max-w-max">
+     Thodu dhongalam
+    </h3>
+    <p class="text-indigo-200 max-w-4xl">
+    Childhood friends are the ones who grow with us, sharing laughter, secrets, and countless memories.
+They know our innocence, our dreams, and the little stories that shaped who we are today.
+Even after years, one smile or memory can bring back the same bond instantly.
+They are not just friends, but a part of our heart and our forever story.
+    </p>
+    <div aria-label="Memoryverse interactive scroll" class="memoryverse-scroll flex space-x-6 overflow-x-auto py-6 px-2 rounded-lg bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-900 shadow-lg">
+     <!-- 15 Memoryverse locations with avatars -->
+     <div class="min-w-[280px] bg-indigo-800 rounded-2xl shadow-xl p-4 flex flex-col items-center space-y-4">
+      <img alt="Digital animated playground with colorful swings, slides, and trees bathed in warm sunset lighting, lively and inviting" class="rounded-xl shadow-md" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1754759952/9114c903-527e-4fd0-bd33-0d9053203552_lb0efw.jpg" width="260"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       SAI KUMAR
+      </h4>
+      <div class="flex space-x-3">
+       <img alt="3D avatar of a smiling child with curly hair wearing a blue shirt, animated with bright eyes and joyful expression" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/92d25cab-7bcf-4d95-72e0-5ba6b8838d80.jpg" width="48"/>
+       <img alt="3D avatar of a child with glasses and a red hat, animated with expressive eyes and a playful smile" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/92d25cab-7bcf-4d95-72e0-5ba6b8838d80.jpg" width="260"/>
+      </div>
+     </div>
+     <div class="min-w-[280px] bg-indigo-800 rounded-2xl shadow-xl p-4 flex flex-col items-center space-y-4">
+      <img alt="Animated classroom with wooden desks, sunlight streaming through large windows, and colorful posters on walls" class="rounded-xl shadow-md" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755705759/ANIL_etgifm.jpg" width="260"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       ANIL
+      </h4>
+      <div class="flex space-x-3">
+       <img alt="3D avatar of a child with braids wearing a green sweater, animated with bright eyes and a gentle smile" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5a8ab817-9815-4844-e52f-fa625c4b0e6f.jpg" width="48"/>
+       <img alt="3D avatar of a child with freckles wearing a yellow shirt, animated with lively eyes and a cheerful expression" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3b61d2ee-ba9e-4509-8242-f5fe23cbcb8a.jpg" width="48"/>
+      </div>
+     </div>
+     <div class="min-w-[280px] bg-indigo-800 rounded-2xl shadow-xl p-4 flex flex-col items-center space-y-4">
+      <img alt="Animated festival scene at night with colorful string lights, balloons, and joyful crowd silhouettes" class="rounded-xl shadow-md" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755707151/MA_A_SU_ohud7f.jpg" width="260"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       MAYYADU
+      </h4>
+      <div class="flex space-x-3">
+       <img alt="3D avatar of a child with short hair wearing a blue hoodie, animated with expressive eyes and a friendly smile" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7eb714a8-52d6-44ac-dd47-3ec43902fdf4.jpg" width="48"/>
+       <img alt="3D avatar of a child with long hair wearing a purple dress, animated with bright eyes and a joyful expression" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/396d3f19-3011-434c-cdb8-4f2316891cc7.jpg" width="48"/>
+      </div>
+     </div>
+     <div class="min-w-[280px] bg-indigo-800 rounded-2xl shadow-xl p-4 flex flex-col items-center space-y-4">
+      <img alt="Digital treehouse nestled in a lush green forest with sunlight filtering through leaves, warm and inviting" class="rounded-xl shadow-md" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755705851/KIRAN_uopwcm.jpg" width="260"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       KIRAN 
+      </h4>
+      <div class="flex space-x-3">
+       <img alt="3D avatar of a child wearing a hat and orange shirt, animated with lively eyes and a mischievous smile" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b027c7e8-ea0e-420e-ccac-76ec8c5132d4.jpg" width="48"/>
+       <img alt="3D avatar of a child with curly hair wearing a white t-shirt, animated with bright eyes and a happy expression" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e763f679-6889-4d03-88b6-83297ad5a499.jpg" width="48"/>
+      </div>
+     </div>
+     <div class="min-w-[280px] bg-indigo-800 rounded-2xl shadow-xl p-4 flex flex-col items-center space-y-4">
+      <img alt="Animated school yard with basketball court, blooming trees, and children playing in springtime" class="rounded-xl shadow-md" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755705851/DAVID_gvwkji.jpg" width="260"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       DAAVIDU
+      </h4>
+      <div class="flex space-x-3">
+       <img alt="3D avatar of a child wearing a cap and green shirt, animated with bright eyes and a playful smile" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/20077789-dce9-4ac8-9d1e-13c2878b3107.jpg" width="48"/>
+       <img alt="3D avatar of a child with short hair and red scarf, animated with lively eyes and a cheerful expression" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/48a293f5-4aed-4b8f-1f40-021270884bcb.jpg" width="48"/>
+      </div>
+     </div>
+     <div class="min-w-[280px] bg-indigo-800 rounded-2xl shadow-xl p-4 flex flex-col items-center space-y-4">
+      <img alt="Animated summer campfire scene with friends gathered around glowing flames under a starry night sky" class="rounded-xl shadow-md" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755705852/SUNDHARI_erbz72.jpg" width="260"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       SUNDARI
+      </h4>
+      <div class="flex space-x-3">
+       <img alt="3D avatar of a child wearing a beanie and blue jacket, animated with expressive eyes and a warm smile" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/363bf78b-6641-4a28-6888-a8b8c0b0b75a.jpg" width="48"/>
+       <img alt="3D avatar of a child with long hair wearing a red hoodie, animated with bright eyes and a joyful expression" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3f56070d-cd07-42cd-00e9-4cb56aa1ae02.jpg" width="48"/>
+      </div>
+     </div>
+     <div class="min-w-[280px] bg-indigo-800 rounded-2xl shadow-xl p-4 flex flex-col items-center space-y-4">
+      <img alt="Animated winter snow scene with friends building a snowman, snow-covered trees, and soft twilight lighting" class="rounded-xl shadow-md" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755705852/HRUDESH_gukijh.jpg" width="260"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       HRUDHESH
+      </h4>
+      <div class="flex space-x-3">
+       <img alt="3D avatar of a child wearing a scarf and gloves, animated with bright eyes and a joyful smile" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ee215806-88ec-4669-8141-7f16dff9f6cb.jpg" width="48"/>
+       <img alt="3D avatar of a child wearing earmuffs and a blue coat, animated with lively eyes and a happy expression" class="w-12 h-12 rounded-full border-2 border-indigo-400 avatar-eyes" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/34ddde25-fac6-428c-2037-f24910a0b80e.jpg" width="48"/>
+      </div>
+     </div>
+     <div class="min-w-[280px] bg-indigo-800 rounded-2xl shadow-xl p-4 flex flex-col items-center space-y-4">
+      <img alt="Animated birthday party scene with colorful balloons, a cake on the table, and friends celebrating joyfully" class="rounded-xl shadow-md" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755710884/MERUSU_p0wgb2.jpg" width="260"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       <marquee>💖MERUSU💚SWAPNA💖</marquee>
+      </h4>
+      
+     </div>
+    </div>
+   </section>
+   <!-- Avatars & Chatbot Companions Section -->
+   <section class="space-y-8" id="avatars">
+    <h3 class="text-3xl font-bold text-indigo-400 border-b-2 border-indigo-600 pb-2 max-w-max">
+     Live Animated Avatars &amp; Chatbot Companions
+    </h3>
+    <p class="text-indigo-200 max-w-4xl">
+     Experience hyper-detailed, expressive 3D avatars that evolve in real time based on mood and conversation. Our advanced chatbot companions animate with nuanced gestures, voice inflections, and emotion-synced facial expressions. They recall shared memories, narrate inside stories, and perform group improv sketches drawn from your friendship’s history.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <!-- Avatar 1 -->
+     <div class="bg-indigo-800 rounded-2xl shadow-xl p-6 flex flex-col items-center space-y-4">
+      <img alt="3D avatar of a child with curly hair wearing a blue shirt, smiling with animated eyes and subtle hand gesture expressing joy" class="rounded-full shadow-lg" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1754759952/9114c903-527e-4fd0-bd33-0d9053203552_lb0efw.jpg" width="180"/>
+      <h4 class="text-indigo-300 font-semibold text-xl">
+       SAI
+      </h4>
+      <p class="text-indigo-200 text-center text-sm">
+       Expressive avatar with mood-adaptive animations and chatbot companion that recalls your funniest playground stories.
+      </p>
+      <button class="mt-2 px-5 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+       Chat with SAI
+      </button>
+     </div>
+     <!-- Avatar 2 -->
+     <div class="bg-indigo-800 rounded-2xl shadow-xl p-6 flex flex-col items-center space-y-4">
+      <img alt="3D avatar of a child with glasses and a red hat, animated with a smile and eye movement showing engagement" class="rounded-full shadow-lg" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755707374/PK_mjroia.jpg" width="180"/>
+      <h4 class="text-indigo-300 font-semibold text-xl">
+       POWER STAR PAVAN KALYAN
+      </h4>
+      <p class="text-indigo-200 text-center text-sm">
+       Chatbot companion with voice inflections and gestures, ready to perform improv sketches from your friendship history.
+      </p>
+      <button class="mt-2 px-5 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+       Chat with PSPK
+      </button>
+     </div>
+     <!-- Avatar 3 -->
+     <div class="bg-indigo-800 rounded-2xl shadow-xl p-6 flex flex-col items-center space-y-4">
+      <img alt="3D avatar of a child with braids wearing a green sweater, animated with an expressive face showing curiosity and warmth" class="rounded-full shadow-lg" height="180" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755705851/DAVID_gvwkji.jpg" width="180"/>
+      <h4 class="text-indigo-300 font-semibold text-xl">
+       DAVID
+      </h4>
+      <p class="text-indigo-200 text-center text-sm">
+       Emotion-synced avatar companion that adapts voice and expressions to your current mood and conversation tempo.
+      </p>
+      <button class="mt-2 px-5 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+       Chat with DAVID
+      </button>
+     </div>
+    </div>
+   </section>
+   <!-- AR/VR Memory Scapes Section -->
+   <section class="space-y-8" id="memory-scapes">
+    <h3 class="text-3xl font-bold text-indigo-400 border-b-2 border-indigo-600 pb-2 max-w-max">
+     Childhood friends always special
+    </h3>
+    <p class="text-indigo-200 max-w-4xl">
+     Walk together with friends in digitized playgrounds, classrooms, and festival scenes via AR on your phone or VR headset. Backgrounds animate dynamically, seasons and time of day shift with emotion and conversation flow. Enjoy interactive mini-games, collective memory-building, and hidden “past moments” to rediscover.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+     <div class="bg-indigo-800 rounded-2xl shadow-xl p-6 flex flex-col items-center space-y-4">
+      <img alt="Augmented reality scene of friends walking through an animated playground with falling autumn leaves and golden hour lighting" class="rounded-xl shadow-lg" height="700" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755705852/PRENDS_bvd7fw.jpg" height="600"/>
+      <h4 class="text-indigo-300 font-semibold text-xl">
+       MY BEST BATCHE'S
+      </h4>
+      <button class="mt-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+       Launch AR Experience
+      </button>
+     </div>
+     <div class="bg-indigo-800 rounded-2xl shadow-xl p-6 flex flex-col items-center space-y-4">
+      <img alt="Virtual reality scene of friends exploring a digital festival with colorful lights, interactive elements, and animated crowds" class="rounded-xl shadow-lg" height="240" loading="lazy" src="https://res.cloudinary.com/dcdl7vjca/image/upload/v1755705851/hrudesh_marrage_batch_hus7t0.jpg" width="400"/>
+      <h4 class="text-indigo-300 font-semibold text-xl">
+       VR Festival Adventure
+      </h4>
+      <button class="mt-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+       Launch VR Experience
+      </button>
+     </div>
+    </div>
+   </section>
+   <!-- Cinematic Experience Cards Section -->
+   <section class="space-y-8" id="cinematic-cards">
+    <h3 class="text-3xl font-bold text-indigo-400 border-b-2 border-indigo-600 pb-2 max-w-max">
+     Cinematic Experience Cards
+    </h3>
+    <p class="text-indigo-200 max-w-4xl">
+     Memory cards come alive as full cinematic scenes — dynamic parallax, unfolding timelines, animated comic panels with voice acting and background sounds. Interact by dragging, clicking, or speaking to trigger multi-sensory flashbacks.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <!-- Card 1 -->
+     <div class="card-flip max-w-sm mx-auto shadow-lg">
+      <div class="card-inner bg-indigo-800 rounded-2xl overflow-hidden">
+       <div class="card-front p-4 flex flex-col items-center space-y-4">
+        <img alt="Animated comic panel showing friends playing in a treehouse with dynamic parallax effect and vibrant colors" class="rounded-lg shadow-md" height="160" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d713fafe-68b9-4652-8581-50142cb66609.jpg" width="280"/>
+        <h4 class="text-indigo-300 font-semibold text-lg">
+         Treehouse Adventures
+        </h4>
+        <p class="text-indigo-200 text-center text-sm">
+         Tap to flip and relive your favorite treehouse memories with voice narration and sound effects.
+        </p>
+       </div>
+       <div class="card-back p-6 flex flex-col justify-center items-center text-center">
+        <p class="text-indigo-100 mb-4">
+         “Remember when we built secret tunnels and told spooky stories? That night was magical, with the fireflies dancing all around.”
+        </p>
+        <button class="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+         Play Voice Flashback
+        </button>
+       </div>
+      </div>
+     </div>
+     <!-- Card 2 -->
+     <div class="card-flip max-w-sm mx-auto shadow-lg">
+      <div class="card-inner bg-indigo-800 rounded-2xl overflow-hidden">
+       <div class="card-front p-4 flex flex-col items-center space-y-4">
+        <img alt="Animated timeline of friends at school events with dynamic parallax layers and vibrant colors" class="rounded-lg shadow-md" height="160" loading="lazy" src="https://storage.googleapis.com/a1aa/image/8b9f4af2-39b4-48ff-48aa-09a8d4056ffc.jpg" width="280"/>
+        <h4 class="text-indigo-300 font-semibold text-lg">
+         School Days Timeline
+        </h4>
+        <p class="text-indigo-200 text-center text-sm">
+         Click to explore your school memories with animated timelines and background sounds.
+        </p>
+       </div>
+       <div class="card-back p-6 flex flex-col justify-center items-center text-center">
+        <p class="text-indigo-100 mb-4">
+         “From first day jitters to graduation cheers, every moment is a chapter in our story.”
+        </p>
+        <button class="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+         Play Soundscape
+        </button>
+       </div>
+      </div>
+     </div>
+     <!-- Card 3 -->
+     <div class="card-flip max-w-sm mx-auto shadow-lg">
+      <div class="card-inner bg-indigo-800 rounded-2xl overflow-hidden">
+       <div class="card-front p-4 flex flex-col items-center space-y-4">
+        <img alt="Animated comic panel with friends at a birthday party, featuring voice acting and background music" class="rounded-lg shadow-md" height="160" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3ee9bdad-a4a4-4696-5170-a43e14a8f98e.jpg" width="280"/>
+        <h4 class="text-indigo-300 font-semibold text-lg">
+         Birthday Bash Memories
+        </h4>
+        <p class="text-indigo-200 text-center text-sm">
+         Speak or click to trigger multi-sensory flashbacks of your most joyful celebrations.
+        </p>
+       </div>
+       <div class="card-back p-6 flex flex-col justify-center items-center text-center">
+        <p class="text-indigo-100 mb-4">
+         “The laughter, the cake, the surprise guests — it all comes rushing back like yesterday.”
+        </p>
+        <button class="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+         Play Celebration Audio
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Emotion-Aware World Section -->
+   <section class="space-y-8" id="emotion-aware">
+    <h3 class="text-3xl font-bold text-indigo-400 border-b-2 border-indigo-600 pb-2 max-w-max">
+     Emotion-Aware World
+    </h3>
+    <p class="text-indigo-200 max-w-4xl">
+     Our emotion-AI sensors analyze group mood, words, and interaction tempo to dynamically choose background music, weather, and animation style — from rain sparkles to golden hour lighting — creating a world that truly feels alive and connected to your feelings.
+    </p>
+    <div class="bg-indigo-800 rounded-2xl shadow-xl p-6 flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+     <img alt="Animated digital scene showing dynamic weather and lighting changes such as rain sparkles, autumn leaves, and golden hour lighting based on emotion analysis" class="rounded-xl shadow-lg w-full md:w-1/2" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/0a90a1d4-beba-420a-3c59-8200ba1a3ff8.jpg" width="320"/>
+     <div class="flex flex-col space-y-4 w-full md:w-1/2">
+      <h4 class="text-indigo-300 font-semibold text-2xl">
+       Feel the World Change
+      </h4>
+      <p class="text-indigo-200">
+       Watch as the environment shifts in real time — gentle rain sparkles when friends feel nostalgic, golden hour warmth when joy fills the air, and autumn leaves swirling with heartfelt conversations.
+      </p>
+      <button class="self-start px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+       Experience Emotion-Aware World
+      </button>
+     </div>
+    </div>
+   </section>
+   <!-- Augmented Group Activities Section -->
+   <section class="space-y-8" id="group-activities">
+    <h3 class="text-3xl font-bold text-indigo-400 border-b-2 border-indigo-600 pb-2 max-w-max">
+     Augmented Group Activities
+    </h3>
+    <p class="text-indigo-200 max-w-4xl">
+     Collaborate in real-time multiplayer scenes: create moving digital murals, race through animated obstacle courses, or solve puzzles. Each activity adapts and animates based on your friendship’s story and dynamics.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <div class="bg-indigo-800 rounded-2xl shadow-xl p-6 flex flex-col items-center space-y-4">
+      <img alt="Friends collaborating on a colorful digital mural with animated paint brushes and splashes" class="rounded-xl shadow-md" height="160" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b80a11cc-5041-4ca0-726f-90dfcd2a1207.jpg" width="280"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       Digital Mural
+      </h4>
+      <button class="mt-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+       Join Mural Session
+      </button>
+     </div>
+     <div class="bg-indigo-800 rounded-2xl shadow-xl p-6 flex flex-col items-center space-y-4">
+      <img alt="Animated obstacle course with friends racing and jumping over colorful platforms" class="rounded-xl shadow-md" height="160" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ee3640ce-cd54-46fe-0dfc-867c247d173b.jpg" width="280"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       Obstacle Race
+      </h4>
+      <button class="mt-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+       Join Race
+      </button>
+     </div>
+     <div class="bg-indigo-800 rounded-2xl shadow-xl p-6 flex flex-col items-center space-y-4">
+      <img alt="Friends solving an animated puzzle with colorful pieces and timers, collaborative and fun" class="rounded-xl shadow-md" height="160" loading="lazy" src="https://storage.googleapis.com/a1aa/image/def7613a-87d3-4f94-276d-b85906236c32.jpg" width="280"/>
+      <h4 class="text-indigo-300 font-semibold text-lg">
+       Puzzle Quest
+      </h4>
+      <button class="mt-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+       Join Puzzle
+      </button>
+     </div>
+    </div>
+   </section>
+   <!-- Deep Personalization Section -->
+   <section class="space-y-8" id="personalization">
+    <h3 class="text-3xl font-bold text-indigo-400 border-b-2 border-indigo-600 pb-2 max-w-max">
+     Deep Personalization
+    </h3>
+    <p class="text-indigo-200 max-w-4xl">
+     Customize every detail — character styles, animation intensity, background scenes, chatbot voices — all adapting to your friendship’s evolution. Design your own Memory Worlds by remixing environments, importing sounds, 3D stickers, and custom animated gadgets.
+    </p>
+    <div class="bg-indigo-800 rounded-2xl shadow-xl p-6 flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+     <img alt="User interface showing customization options for avatars, environments, animation intensity, and chatbot voices with colorful sliders and toggles" class="rounded-xl shadow-lg w-full md:w-1/2" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1ab7e46f-3bf5-4b21-8a1b-d49d8a9dffd7.jpg" width="320"/>
+     <div class="flex flex-col space-y-4 w-full md:w-1/2">
+      <h4 class="text-indigo-300 font-semibold text-2xl">
+       Create Your Memory World
+      </h4>
+      <p class="text-indigo-200">
+       Remix your environments, import your favorite sounds, add 3D stickers, and design custom animated gadgets to make your Memoryverse truly yours.
+      </p>
+      <button class="self-start px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full font-semibold text-white shadow transition">
+       Customize Now
+      </button>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-indigo-900 text-indigo-300 py-8 mt-20">
+   <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+    <p class="text-sm select-none">
+     © 2024 Childhood Friends: Memories Universe. All rights reserved.
+    </p>
+    <div class="flex space-x-6 text-indigo-400">
+     <a aria-label="Facebook" class="hover:text-indigo-200 transition" href="#">
+      <i class="fab fa-facebook fa-lg">
+      </i>
+     </a>
+     <a aria-label="Twitter" class="hover:text-indigo-200 transition" href="#">
+      <i class="fab fa-twitter fa-lg">
+      </i>
+     </a>
+     <a aria-label="Instagram" class="hover:text-indigo-200 transition" href="#">
+      <i class="fab fa-instagram fa-lg">
+      </i>
+     </a>
+     <a aria-label="LinkedIn" class="hover:text-indigo-200 transition" href="#">
+      <i class="fab fa-linkedin fa-lg">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+ </body>
+</html>
